@@ -1,0 +1,23 @@
+{
+  "name": "book-swap",
+  "version": "1.0.0",
+  "description": "Book swap app for Covid-19",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HettieM/book-swap.git"
+  },
+  "author": "Hettie McConnell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HettieM/book-swap/issues"
+  },
+  "homepage": "https://github.com/HettieM/book-swap#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "pg": "^8.0.3"
+  }
+}
