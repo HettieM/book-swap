@@ -31,6 +31,7 @@ function printBooks(booksArr) {
         <h2 class="book-author">${book.author}</h2>
         <h3 class="book-added-by">Added by: ${book.added_by}</h3>
         <p class="book-about">${book.about}</p>
+        <a href="delete=${book.id}"><button class="delete-button">Delete</button></a>
         </article>
         `;
   });

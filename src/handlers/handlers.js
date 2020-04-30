@@ -7,7 +7,7 @@ function homeHandler(request, response) {
   request.on("end", () => {
     model.getAllBooks(body).then((books) => {
       response.writeHead(200, { "content-type": "text/html" });
-      console.log(books);
+      //   console.log(books);
       const homeHtml = templates.home(books);
       response.end(homeHtml);
     });
@@ -26,7 +26,6 @@ function formPost(request, response) {
   request.on("end", () => {
     const searchParams = new URLSearchParams(body);
     const data = Object.fromEntries(searchParams);
-    console.log(data);
     model
       .createBook(data)
       .then(() => {
@@ -40,4 +39,13 @@ function formPost(request, response) {
   });
 }
 
-module.exports = { homeHandler, formHandler, formPost };
+function deletePost(request, response, url) {
+  const deleteId = url.match(/\d$/) || "";
+  //   console.log(deleteId[0]);
+  model.deletePostFromDatabase(deleteId[0]).then(() => {
+    response.writeHead(302, { location: "/" });
+    response.end();
+  });
+}
+
+module.exports = { homeHandler, formHandler, formPost, deletePost };

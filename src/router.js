@@ -9,6 +9,8 @@ function router(request, response) {
     handlers.formHandler(request, response);
   } else if (url === "/submit" && method === "POST") {
     handlers.formPost(request, response);
+  } else if (url.includes("delete")) {
+    handlers.deletePost(request, response, url);
   }
 }
 

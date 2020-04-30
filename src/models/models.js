@@ -17,4 +17,8 @@ function getAllBooks() {
   return db.query("SELECT * FROM books").then((res) => res.rows);
 }
 
-module.exports = { createBook, getAllBooks };
+function deletePostFromDatabase(deleteId) {
+  return db.query(`DELETE FROM books WHERE id = $1`, [deleteId]);
+}
+
+module.exports = { createBook, getAllBooks, deletePostFromDatabase };
