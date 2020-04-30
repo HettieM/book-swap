@@ -1,4 +1,4 @@
-const handlers = require("./handlers/handlers");
+const handlers = require("./handlers");
 
 function router(request, response) {
   const { url, method } = request;
@@ -11,6 +11,8 @@ function router(request, response) {
     handlers.formPost(request, response);
   } else if (url.includes("delete")) {
     handlers.deletePost(request, response, url);
+  } else {
+    handlers.missing(request, response);
   }
 }
 

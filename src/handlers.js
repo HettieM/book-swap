@@ -1,5 +1,5 @@
-const templates = require("../templates/templates");
-const model = require("../models/models");
+const templates = require("./templates");
+const model = require("./models");
 
 function homeHandler(request, response) {
   const body = "";
@@ -48,4 +48,9 @@ function deletePost(request, response, url) {
   });
 }
 
-module.exports = { homeHandler, formHandler, formPost, deletePost };
+function missing(request, response) {
+  response.writeHead(200, { "content-type": "text/html" });
+  response.end(`<h1>Missing page hunni, go <a href="/">home</a>`);
+}
+
+module.exports = { homeHandler, formHandler, formPost, deletePost, missing };
