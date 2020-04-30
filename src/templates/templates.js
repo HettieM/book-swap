@@ -13,14 +13,29 @@ function sharedLayout(bodyContent) {
   //link to stylesheet somewhere?
 }
 
-function home() {
+function home(booksArr) {
   return sharedLayout(`
     <section class="heading-wrapper">
+    <a class="link link-add-book" href="/add">Add a book here</a>
         <h1 class="page-title">Gals' Books Available</h1>
-        <a class="link link-add-book" href="/add">Add a book here</a>
     </section>
-    <section class="books-wrapper"></section>
+    <section class="books-wrapper">${printBooks(booksArr)}</section>
     `);
+}
+
+function printBooks(booksArr) {
+  const newArr = booksArr.map((book) => {
+    return `
+        <article id="book-${book.id}" class="book-card">
+        <h2 class="book-title">${book.title}</h2>
+        <h2 class="book-author">${book.author}</h2>
+        <h3 class="book-added-by">Added by: ${book.added_by}</h3>
+        <p class="book-about">${book.about}</p>
+        </article>
+        `;
+  });
+
+  return newArr;
 }
 
 function form() {

@@ -13,4 +13,8 @@ function createBook(bookObj) {
   );
 }
 
-module.exports = { createBook };
+function getAllBooks() {
+  return db.query("SELECT * FROM books").then((res) => res.rows);
+}
+
+module.exports = { createBook, getAllBooks };

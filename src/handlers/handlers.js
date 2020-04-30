@@ -2,9 +2,16 @@ const templates = require("../templates/templates");
 const model = require("../models/models");
 
 function homeHandler(request, response) {
-  response.writeHead(200, { "content-type": "text/html" });
-  const homeHtml = templates.home();
-  response.end(homeHtml);
+  const body = "";
+  request.on("data", (chunk) => (body += chunk));
+  request.on("end", () => {
+    model.getAllBooks(body).then((books) => {
+      response.writeHead(200, { "content-type": "text/html" });
+      console.log(books);
+      const homeHtml = templates.home(books);
+      response.end(homeHtml);
+    });
+  });
 }
 
 function formHandler(request, response) {
