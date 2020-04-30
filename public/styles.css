@@ -1,7 +1,66 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: arial;
+  /* border: 1px solid black; */
+}
+
+:root {
+  --colour-1: #f8f3eb;
+  --colour-2: #c3edea;
+  --colour-3: #fc7e2f;
+  --colour-4: #f40552;
+  /* --colour-5: ; */
+}
+
 body {
-  background-color: red;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  background-color: var(--colour-1);
+}
+
+.books-wrapper {
+  width: 75%;
+  /* border: 1px solid black; */
+  border-radius: 3%;
+}
+
+.book-card {
+  background-color: var(--colour-2);
+  padding: 2%;
 }
 
 h1 {
-  color: blue;
+  font-size: 3rem;
+  color: var(--colour-3);
+}
+
+h2 {
+  font-size: 2rem;
+  color: var(--colour-4);
+}
+
+h3 {
+  color: var(--colour-4);
+}
+
+p {
+  color: var(--colour-3);
+}
+
+button {
+  padding: 1%;
+  margin: 1%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+
+.form__input {
+  font-size: 2rem;
 }

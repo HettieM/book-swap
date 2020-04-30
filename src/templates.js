@@ -5,7 +5,7 @@ function sharedLayout(bodyContent) {
           <title>Book Swap</title>
           <meta charset="UTF-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-          <link rel='stylesheet' type='text/css' href="public/styles.css">
+          <link rel="stylesheet" type="text/css" href="public/styles.css" />
         </head>
         <body>${bodyContent}</body>
       </html>
@@ -52,7 +52,7 @@ function form() {
         <input class="form__input" id="bookAuthor" type="text" name="author" required> 
 
         <label class="form__label" for="bookAbout">About:</label>
-        <textarea class="form__textbox" id="bookAbout" name="about" placeholder="Not required"></textarea>
+        <textarea class="form__textbox form__input" id="bookAbout" name="about" placeholder="Not required"></textarea>
 
         <label class="form__label" for="addedBy">Added By:</label>
         <input class="form__input" id="addedBy" type="text" name="added_by" required> 
