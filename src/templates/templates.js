@@ -10,6 +10,7 @@ function sharedLayout(bodyContent) {
         <body>${bodyContent}</body>
       </html>
       `;
+  //link to stylesheet somewhere?
 }
 
 function home() {
@@ -29,15 +30,18 @@ function form() {
         <a class="link__home" href="/">Back to Home Page!</a>
 
         <label class="form__label" for="bookTitle">Book Title:</label>
-        <input class="form__input" id="bookTitle" type="text" name="bookTitle" required> 
+        <input class="form__input" id="bookTitle" type="text" name="title" required> 
         
         <label class="form__label" for="bookAuthor">Book Author:</label>
-        <input class="form__input" id="bookAuthor" type="text" name="bookAuthor" required> 
+        <input class="form__input" id="bookAuthor" type="text" name="author" required> 
 
         <label class="form__label" for="bookAbout">About:</label>
-        <textarea class="form__textbox" id="bookAbout" name="bookAbout" placeholder="Not required"></textarea>
+        <textarea class="form__textbox" id="bookAbout" name="about" placeholder="Not required"></textarea>
 
-        <button class="form__button" aria-label="button to add recipe" type="submit">Add Recipe!</button>
+        <label class="form__label" for="addedBy">Added By:</label>
+        <input class="form__input" id="addedBy" type="text" name="added_by" required> 
+
+        <button class="form__button" aria-label="button to add recipe" type="submit">Add Book!</button>
         </form>
       </section>
     `);

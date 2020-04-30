@@ -5,9 +5,10 @@ function router(request, response) {
 
   if (url === "/" && method === "GET") {
     handlers.homeHandler(request, response);
-  }
-  if (url === "/add" && method === "GET") {
+  } else if (url === "/add" && method === "GET") {
     handlers.formHandler(request, response);
+  } else if (url === "/submit" && method === "POST") {
+    handlers.formPost(request, response);
   }
 }
 

@@ -1,4 +1,5 @@
 const templates = require("../templates/templates");
+const model = require("../models/models");
 
 function homeHandler(request, response) {
   response.writeHead(200, { "content-type": "text/html" });
@@ -12,4 +13,24 @@ function formHandler(request, response) {
   response.end(formHtml);
 }
 
-module.exports = { homeHandler, formHandler };
+function formPost(request, response) {
+  let body = "";
+  request.on("data", (chunk) => (body += chunk));
+  request.on("end", () => {
+    const searchParams = new URLSearchParams(body);
+    const data = Object.fromEntries(searchParams);
+    console.log(data);
+    model
+      .createBook(data)
+      .then(() => {
+        response.writeHead(302, { location: "/" });
+        response.end();
+      })
+      .catch((error) => {
+        response.writeHead(500, { "content-type": "text/html" });
+        response.end("<h1> Something went wrong hunni</h1>");
+      });
+  });
+}
+
+module.exports = { homeHandler, formHandler, formPost };
