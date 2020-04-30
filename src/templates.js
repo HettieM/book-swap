@@ -4,7 +4,8 @@ function sharedLayout(bodyContent) {
         <head>
           <title>Book Swap</title>
           <meta charset="UTF-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1.0" />git s
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <link rel='stylesheet' type='text/css' href="public/styles.css">
         </head>
         <body>${bodyContent}</body>
       </html>
