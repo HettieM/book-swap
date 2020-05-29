@@ -8,6 +8,8 @@ No form of authentication - anyone can add or remove a book updated by anyone or
 
 
 # To deploy locally
+in a .env file in the root of your directory
+```
   PGDATABASE={ your local production database name }
   PGUSER={ your database user name }
-  PGPASSWORD={ your database password }
+  PGPASSWORD={ your database password }```
